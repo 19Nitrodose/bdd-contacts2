@@ -43,3 +43,23 @@ INSERT INTO contacts (nom, prenom, date_de_naissance, sexe, adresse, cp, ville, 
     ('Lefebvre', 'Marc', '1978-01-22', 'M', '258 rue Garibaldi', '69003', 'Lyon', 'FRA'),
     ('Leroy', 'Marie', '1982-09-17', 'F', '369 rue de la Liberté', '33000', 'Bordeaux', 'FRA'),
     ('Roux', 'David', '1994-06-11', 'M', '852 avenue de la Gare', '33000', 'Bordeaux', 'FRA');
+
+    CREATE TABLE telephone (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_contact INT,
+    numero VARCHAR(50),
+    type TINYINT,
+    FOREIGN KEY (id_contact) REFERENCES contacts(id)
+);
+
+INSERT INTO telephone (id_contact, numero, type) VALUES
+    (1, '0123456789', 1),
+    (2, '0234567891', 1),
+    (3, '0345678912', 2),
+    (4, '0456789123', 1),
+    (5, '0567891234', 2),
+    (6, '0678912345', 1),
+    (7, '0789123456', 2),
+    (8, '0891234567', 1),
+    (9, '0912345678', 2),
+    (10, '0123456790', 1);
